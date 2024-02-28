@@ -1,23 +1,23 @@
+plugins {
+    kotlin("jvm")
+}
+
 group = "com.thomaslhostis.quarkusgradlekotlinhexagone.core"
 version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
-    mavenLocal()
-}
-
-plugins {
-    kotlin("jvm") version "1.9.22"
-    kotlin("plugin.allopen") version "1.9.22"
-    id("io.quarkus")
-}
-
-quarkus {
-    version = "2.7.0.Final"
-    // Configuration spécifique à ce module
 }
 
 dependencies {
-    implementation("io.quarkus:quarkus-resteasy:3.8.0")
-    // Autres dépendances spécifiques à ce module
+    implementation(project(":core:application"))
+    implementation("io.quarkus:quarkus-resteasy-reactive-jackson")
+    implementation("io.quarkus:quarkus-resteasy-reactive")
+}
+
+tasks.test {
+    useJUnitPlatform()
+}
+kotlin {
+    jvmToolchain(17)
 }
