@@ -14,4 +14,7 @@ subprojects {
         mavenLocal()
         mavenCentral()
     }
+    apply {
+        plugin("kotlin")
+    }
 }
