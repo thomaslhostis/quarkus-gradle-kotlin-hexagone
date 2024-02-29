@@ -8,7 +8,7 @@ version = "1.0-SNAPSHOT"
 val quarkusVersion: String by project
 
 dependencies {
-    api(project(":core:application"))
+    implementation(project(":core:application"))
 
     implementation("io.quarkus:quarkus-resteasy-reactive-jackson:${quarkusVersion}")
     implementation("io.quarkus:quarkus-resteasy-reactive:${quarkusVersion}")

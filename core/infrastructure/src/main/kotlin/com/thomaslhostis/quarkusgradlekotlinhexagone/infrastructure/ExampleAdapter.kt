@@ -6,5 +6,5 @@ import jakarta.enterprise.context.ApplicationScoped
 
 @ApplicationScoped
 class ExampleAdapter : ExamplePort {
-    override fun findExample(id: String) = Example("Bonjour de puis l'infrastructure")
+    override fun findExample(id: String) = Example("Bonjour depuis l'infrastructure")
 }

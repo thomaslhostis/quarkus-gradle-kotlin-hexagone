@@ -6,8 +6,9 @@ group = "com.thomaslhostis.quarkusgradlekotlinhexagone"
 version = "1.0-SNAPSHOT"
 
 dependencies {
-    // https://mvnrepository.com/artifact/io.quarkus/quarkus-core
-    implementation("io.quarkus:quarkus-core:3.8.0")
-    api(project(":core:presentation"))
-    api(project(":core:infrastructure"))
+    implementation(project(":core:presentation"))
+    implementation(project(":core:infrastructure"))
+
+    val quarkusVersion: String by project
+    implementation("io.quarkus:quarkus-core:${quarkusVersion}")
 }

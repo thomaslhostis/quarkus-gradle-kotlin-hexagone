@@ -7,6 +7,7 @@ pluginManagement {
         id("io.quarkus") version quarkusVersion
     }
 }
+
 plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version "0.5.0"
 }
