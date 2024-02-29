@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm") apply false
+    id("java")
 }
 
 group = "com.thomaslhostis"
@@ -10,11 +11,24 @@ subprojects {
         kotlinOptions.jvmTarget = JavaVersion.VERSION_17.toString()
         kotlinOptions.javaParameters = true
     }
+
     repositories {
         mavenLocal()
         mavenCentral()
     }
+
     apply {
         plugin("kotlin")
     }
+
+    val quarkusVersion: String by project
+
+    dependencies {
+        implementation(enforcedPlatform("io.quarkus.platform:quarkus-bom:${quarkusVersion}"))
+    }
 }
+
+
+//dependencies {
+//    implementation(enforcedPlatform("io.quarkus.platform:quarkus-bom:${quarkusVersion}"))
+//}

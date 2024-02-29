@@ -10,8 +10,6 @@ val quarkusVersion: String by project
 dependencies {
     implementation(project(":core:application"))
 
-//    implementation(enforcedPlatform("io.quarkus.platform:quarkus-bom:${quarkusVersion}"))
-
     implementation("io.quarkus:quarkus-resteasy-reactive-jackson:${quarkusVersion}")
     implementation("io.quarkus:quarkus-resteasy-reactive:${quarkusVersion}")
 }
