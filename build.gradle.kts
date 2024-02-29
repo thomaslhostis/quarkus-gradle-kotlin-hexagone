@@ -10,4 +10,8 @@ subprojects {
         kotlinOptions.jvmTarget = JavaVersion.VERSION_17.toString()
         kotlinOptions.javaParameters = true
     }
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
 }

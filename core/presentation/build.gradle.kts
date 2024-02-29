@@ -6,10 +6,6 @@ plugins {
 group = "com.thomaslhostis.quarkusgradlekotlinhexagone.core"
 version = "1.0-SNAPSHOT"
 
-repositories {
-    mavenCentral()
-}
-
 val quarkusVersion: String by project
 
 dependencies {
