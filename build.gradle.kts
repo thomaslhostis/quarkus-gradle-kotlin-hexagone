@@ -6,7 +6,7 @@ plugins {
 group = "com.thomaslhostis"
 version = "1.0-SNAPSHOT"
 
-subprojects {
+subprojects {// Essayer conventions
     tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
         kotlinOptions.jvmTarget = JavaVersion.VERSION_17.toString()
         kotlinOptions.javaParameters = true
