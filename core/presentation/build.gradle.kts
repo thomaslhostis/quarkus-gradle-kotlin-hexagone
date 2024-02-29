@@ -10,13 +10,11 @@ repositories {
     mavenCentral()
 }
 
-val quarkusPlatformGroupId: String by project
-val quarkusPlatformArtifactId: String by project
-val quarkusPlatformVersion: String by project
+val quarkusVersion: String by project
 
 dependencies {
     implementation(project(":core:application"))
-    implementation("io.quarkus:quarkus-resteasy-reactive-jackson:${quarkusPlatformVersion}")
-    implementation("io.quarkus:quarkus-resteasy-reactive:${quarkusPlatformVersion}")
-    implementation(enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}"))
+    implementation("io.quarkus:quarkus-resteasy-reactive-jackson:${quarkusVersion}")
+    implementation("io.quarkus:quarkus-resteasy-reactive:${quarkusVersion}")
+    implementation(enforcedPlatform("io.quarkus.platform:quarkus-bom:${quarkusVersion}"))
 }
