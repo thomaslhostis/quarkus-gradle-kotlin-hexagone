@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm")
+    id("io.quarkus")
 }
 
 group = "com.thomaslhostis.quarkusgradlekotlinhexagone.core"
@@ -9,15 +10,13 @@ repositories {
     mavenCentral()
 }
 
+val quarkusPlatformGroupId: String by project
+val quarkusPlatformArtifactId: String by project
+val quarkusPlatformVersion: String by project
+
 dependencies {
     implementation(project(":core:application"))
-    implementation("io.quarkus:quarkus-resteasy-reactive-jackson")
-    implementation("io.quarkus:quarkus-resteasy-reactive")
-}
-
-tasks.test {
-    useJUnitPlatform()
-}
-kotlin {
-    jvmToolchain(17)
+    implementation("io.quarkus:quarkus-resteasy-reactive-jackson:${quarkusPlatformVersion}")
+    implementation("io.quarkus:quarkus-resteasy-reactive:${quarkusPlatformVersion}")
+    implementation(enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}"))
 }
