@@ -1,6 +1,6 @@
 plugins {
     kotlin("jvm") apply false
-    id("java")
+    id("org.kordamp.gradle.jandex")
 }
 
 group = "com.thomaslhostis"
@@ -21,14 +21,9 @@ subprojects {// Essayer conventions
         plugin("kotlin")
     }
 
-    val quarkusVersion: String by project
-
     dependencies {
+        val quarkusVersion: String by project
         implementation(enforcedPlatform("io.quarkus.platform:quarkus-bom:${quarkusVersion}"))
+        implementation("jakarta.enterprise:jakarta.enterprise.cdi-api:4.0.1")
     }
 }
-
-
-//dependencies {
-//    implementation(enforcedPlatform("io.quarkus.platform:quarkus-bom:${quarkusVersion}"))
-//}

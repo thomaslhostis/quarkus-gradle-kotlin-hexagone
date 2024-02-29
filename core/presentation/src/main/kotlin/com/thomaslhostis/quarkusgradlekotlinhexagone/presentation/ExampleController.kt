@@ -1,7 +1,6 @@
 package com.thomaslhostis.quarkusgradlekotlinhexagone.presentation
 
 import com.thomaslhostis.quarkusgradlekotlinhexagone.application.ExampleUseCase
-import jakarta.enterprise.context.ApplicationScoped
 import jakarta.ws.rs.GET
 import jakarta.ws.rs.Path
 
@@ -11,9 +10,4 @@ class ExampleController(
 ) {
     @GET
     fun hello() = exampleUseCase.findExample("id")
-}
-
-@ApplicationScoped
-class InnerExampleUseCase {
-    fun findExample(id: String) = "Azerty"
 }
