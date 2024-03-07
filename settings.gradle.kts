@@ -1,19 +1,12 @@
-pluginManagement {
-    val kotlinVersion: String by settings
-    val quarkusVersion: String by settings
+rootProject.name = "quarkus-gradle-kotlin-hexagone"
 
-    plugins {
-        kotlin("jvm") version kotlinVersion
-        id("io.quarkus") version quarkusVersion
-        id("org.kordamp.gradle.jandex") version "1.0.0"
+dependencyResolutionManagement {
+    versionCatalogs {
+        create("libs") {
+            from(files("gradle.libs.versions.toml"))
+        }
     }
 }
-
-//plugins {
-//    id("org.gradle.toolchains.foojay-resolver-convention") version "0.5.0"
-//}
-
-rootProject.name = "quarkus-gradle-kotlin-hexagone"
 
 include(
     "bootstrap",

@@ -1,0 +1,18 @@
+[versions]
+kotlin = "1.9.22"
+quarkus = "3.8.1"
+jakartaCdiApi = "4.0.1"
+
+[libraries]
+jakartaCdiApi = { module = "jakarta.enterprise:jakarta.enterprise.cdi-api", version.ref = "jakartaCdiApi" }
+kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+quarkusBom = { module = "io.quarkus.platform:quarkus-bom", version.ref = "quarkus" }
+quarkusCore = { module = "io.quarkus:quarkus-core", version.ref = "quarkus" }
+quarkusResteasyReactive = { module = "io.quarkus:quarkus-resteasy-reactive", version.ref = "quarkus" }
+quarkusResteasyReactiveJackson = { module = "io.quarkus:quarkus-resteasy-reactive-jackson", version.ref = "quarkus" }
+
+[bundles]
+#kotlin = ["kotlinReflect", "kotlinStdlibJdk8"]
+
+[plugins]
+quarkus = { id = "io.quarkus", version.ref = "quarkus" }

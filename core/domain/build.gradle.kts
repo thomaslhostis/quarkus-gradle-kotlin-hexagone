@@ -1,2 +1,3 @@
-group = "com.thomaslhostis.quarkusgradlekotlinhexagone.core"
-version = "1.0-SNAPSHOT"
+plugins {
+    id("quarkus-gradle-kotlin-hexagone.kotlin-application-conventions")
+}
