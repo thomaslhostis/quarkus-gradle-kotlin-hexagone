@@ -1,4 +1,5 @@
 [versions]
+jandex = "1.0.0"
 kotlin = "1.9.22"
 quarkus = "3.8.1"
 jakartaCdiApi = "4.0.1"
@@ -15,4 +16,5 @@ quarkusResteasyReactiveJackson = { module = "io.quarkus:quarkus-resteasy-reactiv
 #kotlin = ["kotlinReflect", "kotlinStdlibJdk8"]
 
 [plugins]
+jandex = { id = "org.kordamp.gradle.jandex", version.ref = "jandex" }
 quarkus = { id = "io.quarkus", version.ref = "quarkus" }
